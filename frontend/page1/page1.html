@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CyberSentinel | AI Cybersecurity</title>
+
+    <link rel="stylesheet"
+          href="page1.css">
+
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVIGATION BAR
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            <span class="logo-icon">🛡️</span>
+
+            <span>
+                CyberSentinel
+            </span>
+
+        </div>
+
+
+        <nav class="nav-links">
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#features">
+                Features
+            </a>
+
+            <a href="#how-it-works">
+                How It Works
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+        </nav>
+
+
+        <button class="nav-button"
+                onclick="startScanning()">
+
+            Start Scanning
+
+        </button>
+
+    </header>
+
+
+    <!-- =====================================================
+         HERO SECTION
+    ====================================================== -->
+
+    <section id="home"
+             class="hero">
+
+        <div class="hero-content">
+
+            <div class="badge">
+
+                ⚡ AI-POWERED CYBERSECURITY
+
+            </div>
+
+
+            <h1>
+
+                Stay One Step
+                <span>Ahead of Cyber Threats</span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                CyberSentinel is an AI-powered cybersecurity
+                platform that detects phishing URLs,
+                suspicious messages and malicious
+                screenshots.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <button class="primary-button"
+                        onclick="startScanning()">
+
+                    🔍 Start Scanning
+
+                </button>
+
+
+                <button class="secondary-button"
+                        onclick="showFeatures()">
+
+                    Learn More →
+
+                </button>
+
+            </div>
+
+
+            <!-- Detection Types -->
+
+            <div class="detection-types">
+
+
+                <div class="detection-item">
+
+                    <div class="detection-icon">
+                        🔗
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            URL
+                        </strong>
+
+                        <small>
+                            Phishing Detection
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="detection-item">
+
+                    <div class="detection-icon">
+                        💬
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Message
+                        </strong>
+
+                        <small>
+                            Scam Detection
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="detection-item">
+
+                    <div class="detection-icon">
+                        🖼️
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Screenshot
+                        </strong>
+
+                        <small>
+                            OCR Analysis
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             SECURITY CARD
+        ================================================== -->
+
+        <div class="hero-visual">
+
+            <div class="security-card">
+
+
+                <div class="card-top">
+
+                    <span class="status-dot"></span>
+
+                    <span>
+                        CyberSentinel AI
+                    </span>
+
+                    <span class="shield">
+                        🛡️
+                    </span>
+
+                </div>
+
+
+                <div class="scan-circle">
+
+                    <div class="circle-inner">
+
+                        <span class="circle-icon">
+                            🛡️
+                        </span>
+
+                        <strong>
+                            PROTECTED
+                        </strong>
+
+                        <small>
+                            AI Security Active
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="security-stats">
+
+
+                    <div>
+
+                        <strong>
+                            AI
+                        </strong>
+
+                        <small>
+                            Detection
+                        </small>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            21+
+                        </strong>
+
+                        <small>
+                            URL Features
+                        </small>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            3
+                        </strong>
+
+                        <small>
+                            Scan Types
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INTRODUCTION
+    ====================================================== -->
+
+    <section class="intro-section">
+
+        <div class="intro-content">
+
+            <span class="section-label">
+                CYBER THREAT PROTECTION
+            </span>
+
+
+            <h2>
+                Detect threats before they become problems.
+            </h2>
+
+
+            <p>
+
+                CyberSentinel combines artificial intelligence,
+                security rules and threat intelligence to
+                provide multiple layers of protection.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FEATURES
+    ====================================================== -->
+
+    <section id="features"
+             class="features-section">
+
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                CORE CAPABILITIES
+            </span>
+
+
+            <h2>
+                Intelligent Security,
+                Multiple Layers
+            </h2>
+
+
+            <p>
+
+                Analyze suspicious content using
+                multiple cybersecurity techniques.
+
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+
+            <!-- AI -->
+
+            <div class="feature-card">
+
+                <div class="feature-icon blue">
+                    🧠
+                </div>
+
+
+                <h3>
+                    AI Detection
+                </h3>
+
+
+                <p>
+
+                    Neural-network models analyze URLs
+                    and messages to identify phishing
+                    patterns.
+
+                </p>
+
+            </div>
+
+
+            <!-- Rules -->
+
+            <div class="feature-card">
+
+                <div class="feature-icon purple">
+                    ⚙️
+                </div>
+
+
+                <h3>
+                    Security Rules
+                </h3>
+
+
+                <p>
+
+                    Detect urgency, credential requests,
+                    financial scams and other suspicious
+                    indicators.
+
+                </p>
+
+            </div>
+
+
+            <!-- Threat Intelligence -->
+
+            <div class="feature-card">
+
+                <div class="feature-icon green">
+                    🗄️
+                </div>
+
+
+                <h3>
+                    Threat Intelligence
+                </h3>
+
+
+                <p>
+
+                    Compare suspicious URLs against
+                    the local threat-intelligence
+                    database.
+
+                </p>
+
+            </div>
+
+
+            <!-- Image -->
+
+            <div class="feature-card">
+
+                <div class="feature-icon orange">
+                    🖼️
+                </div>
+
+
+                <h3>
+                    Screenshot Analysis
+                </h3>
+
+
+                <p>
+
+                    OCR extracts text from screenshots
+                    so suspicious messages and URLs
+                    can also be analyzed.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         HOW IT WORKS
+    ====================================================== -->
+
+    <section id="how-it-works"
+             class="how-section">
+
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                HOW IT WORKS
+            </span>
+
+
+            <h2>
+                Three Steps to Safer Browsing
+            </h2>
+
+        </div>
+
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+
+                <h3>
+                    Submit
+                </h3>
+
+
+                <p>
+
+                    Enter a URL, paste a message
+                    or upload a screenshot.
+
+                </p>
+
+            </div>
+
+
+            <div class="step-line"></div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+
+                <h3>
+                    Analyze
+                </h3>
+
+
+                <p>
+
+                    CyberSentinel combines AI,
+                    security rules and threat
+                    intelligence.
+
+                </p>
+
+            </div>
+
+
+            <div class="step-line"></div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+
+                <h3>
+                    Protect
+                </h3>
+
+
+                <p>
+
+                    Receive a risk score,
+                    threat classification and
+                    recommendation.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+
+    <section id="about"
+             class="about-section">
+
+
+        <div class="about-card">
+
+
+            <div>
+
+                <span class="section-label">
+                    ABOUT CYBERSENTINEL
+                </span>
+
+
+                <h2>
+                    Hybrid AI-powered
+                    cybersecurity.
+                </h2>
+
+
+                <p>
+
+                    CyberSentinel combines machine
+                    learning, security rules, OCR
+                    and threat intelligence into
+                    a single cybersecurity platform.
+
+                </p>
+
+            </div>
+
+
+            <div class="about-points">
+
+                <div>
+                    ✓ AI-powered detection
+                </div>
+
+                <div>
+                    ✓ Explainable security indicators
+                </div>
+
+                <div>
+                    ✓ URL, message and image scanning
+                </div>
+
+                <div>
+                    ✓ Hybrid risk scoring
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CALL TO ACTION
+    ====================================================== -->
+
+    <section class="cta-section">
+
+
+        <div class="cta-content">
+
+            <span class="cta-icon">
+                🛡️
+            </span>
+
+
+            <h2>
+                Ready to check a threat?
+            </h2>
+
+
+            <p>
+
+                Scan a URL, message or screenshot
+                with CyberSentinel.
+
+            </p>
+
+
+            <button class="primary-button"
+                    onclick="startScanning()">
+
+                Start Security Scan →
+
+            </button>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+
+        <div class="footer-logo">
+
+            🛡️ CyberSentinel
+
+        </div>
+
+
+        <p>
+
+            AI-powered phishing and threat
+            detection platform.
+
+        </p>
+
+
+        <div class="footer-bottom">
+
+            © 2026 CyberSentinel.
+            All rights reserved.
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="page1.js"></script>
+
+</body>
+
+</html>

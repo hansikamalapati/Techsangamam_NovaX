@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        CyberSentinel AI Assistant
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="page3.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     PAGE WRAPPER
+     ========================================================= -->
+
+<div class="page-wrapper">
+
+
+    <!-- =====================================================
+         NAVIGATION
+         ===================================================== -->
+
+    <nav class="navbar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                🛡️
+            </div>
+
+            <div>
+
+                <h1>
+                    CyberSentinel
+                </h1>
+
+                <span>
+                    AI-Powered Cyber Threat Detection
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="nav-links">
+
+            <a
+                href="page1.html"
+                class="nav-link"
+            >
+                Home
+            </a>
+
+            <a
+                href="page2.html"
+                class="nav-link"
+            >
+                Threat Scanner
+            </a>
+
+            <a
+                href="page3.html"
+                class="nav-link active"
+            >
+                AI Assistant
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             PAGE HEADER
+             ================================================= -->
+
+        <section class="assistant-header">
+
+            <div class="assistant-icon">
+
+                🤖
+
+            </div>
+
+
+            <div class="assistant-title">
+
+                <h2>
+                    CyberSentinel AI Assistant
+                </h2>
+
+                <p>
+                    Your intelligent cybersecurity companion
+                </p>
+
+            </div>
+
+
+            <div class="online-status">
+
+                <span class="status-dot"></span>
+
+                AI Assistant Online
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CHAT CONTAINER
+             ================================================= -->
+
+        <section class="chat-container">
+
+
+            <!-- =============================================
+                 CHAT HEADER
+                 ============================================= -->
+
+            <div class="chat-header">
+
+                <div class="bot-profile">
+
+                    <div class="bot-avatar">
+                        🤖
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            CyberSentinel AI
+                        </h3>
+
+                        <span>
+                            Cybersecurity Assistant
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="clearChatBtn"
+                    class="clear-chat-btn"
+                >
+                    Clear Chat
+                </button>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 SCAN CONTEXT
+                 ============================================= -->
+
+            <div
+                id="scanContext"
+                class="scan-context hidden"
+            >
+
+                <div class="context-icon">
+                    🔎
+                </div>
+
+                <div class="context-content">
+
+                    <strong>
+                        Latest Scan Available
+                    </strong>
+
+                    <p id="contextText">
+                        CyberSentinel AI can use your latest
+                        security scan to answer questions.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="removeContextBtn"
+                    class="remove-context-btn"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 CHAT MESSAGES
+                 ============================================= -->
+
+            <div
+                id="chatMessages"
+                class="chat-messages"
+            >
+
+
+                <!-- =========================================
+                     INITIAL BOT MESSAGE
+                     ========================================= -->
+
+                <div class="message-row bot-row">
+
+                    <div class="message-avatar">
+                        🤖
+                    </div>
+
+
+                    <div class="message-content">
+
+                        <div class="message-name">
+                            CyberSentinel AI
+                        </div>
+
+
+                        <div class="message-bubble bot-bubble">
+
+                            <p>
+                                Hello! 👋 I'm CyberSentinel AI,
+                                your cybersecurity assistant.
+                            </p>
+
+                            <p>
+                                I can explain phishing attacks,
+                                suspicious links, scams, account
+                                security, threat reports, and
+                                cybersecurity best practices.
+                            </p>
+
+                            <p>
+                                If you have performed a scan,
+                                I can also help you understand
+                                the results and explain why
+                                CyberSentinel detected a threat.
+                            </p>
+
+                        </div>
+
+
+                        <div class="message-time">
+                            Now
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =============================================
+                 TYPING INDICATOR
+                 ============================================= -->
+
+            <div
+                id="typingIndicator"
+                class="message-row bot-row typing-row hidden"
+            >
+
+                <div class="message-avatar">
+                    🤖
+                </div>
+
+
+                <div class="typing-bubble">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <label>
+                        CyberSentinel AI is thinking...
+                    </label>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 SUGGESTED QUESTIONS
+                 ============================================= -->
+
+            <div class="suggestions-section">
+
+                <div class="suggestions-title">
+
+                    💡 Try asking:
+
+                </div>
+
+
+                <div class="suggestion-buttons">
+
+
+                    <button
+                        type="button"
+                        class="suggestion-btn"
+                        data-question="What is phishing?"
+                    >
+                        🔐 What is phishing?
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="suggestion-btn"
+                        data-question="How can I identify a phishing website?"
+                    >
+                        🌐 Identify phishing websites
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="suggestion-btn"
+                        data-question="Why was my latest scan suspicious?"
+                    >
+                        🔎 Explain my scan
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="suggestion-btn"
+                        data-question="I clicked a suspicious link. What should I do?"
+                    >
+                        🚨 I clicked a suspicious link
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="suggestion-btn"
+                        data-question="Is it safe to share an OTP?"
+                    >
+                        🔑 Is it safe to share an OTP?
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="suggestion-btn"
+                        data-question="How can I protect myself from phishing?"
+                    >
+                        🛡️ How can I stay protected?
+                    </button>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 INPUT AREA
+                 ============================================= -->
+
+            <div class="chat-input-area">
+
+
+                <div class="input-wrapper">
+
+
+                    <textarea
+                        id="chatInput"
+                        class="chat-input"
+                        rows="1"
+                        placeholder="Ask CyberSentinel anything about cybersecurity..."
+                        autocomplete="off"
+                    ></textarea>
+
+
+                    <button
+                        type="button"
+                        id="sendMessageBtn"
+                        class="send-message-btn"
+                        aria-label="Send message"
+                    >
+
+                        ➤
+
+                    </button>
+
+
+                </div>
+
+
+                <div class="input-footer">
+
+                    <span>
+                        Press Enter to send
+                    </span>
+
+                    <span>
+                        CyberSentinel AI
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             CAPABILITIES
+             ================================================= -->
+
+        <section class="capabilities-section">
+
+
+            <div class="section-heading">
+
+                <span>
+                    🧠
+                </span>
+
+                <div>
+
+                    <h2>
+                        What Can CyberSentinel AI Do?
+                    </h2>
+
+                    <p>
+                        Get practical cybersecurity guidance
+                        in natural language.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="capabilities-grid">
+
+
+                <!-- =========================================
+                     CAPABILITY 1
+                     ========================================= -->
+
+                <div class="capability-card">
+
+                    <div class="capability-icon">
+                        🔍
+                    </div>
+
+                    <h3>
+                        Explain Threats
+                    </h3>
+
+                    <p>
+                        Understand what phishing, social
+                        engineering, credential theft and
+                        other cyber threats mean.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     CAPABILITY 2
+                     ========================================= -->
+
+                <div class="capability-card">
+
+                    <div class="capability-icon">
+                        📊
+                    </div>
+
+                    <h3>
+                        Explain Scan Results
+                    </h3>
+
+                    <p>
+                        Ask questions about your latest
+                        CyberSentinel scan and understand
+                        the detected indicators.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     CAPABILITY 3
+                     ========================================= -->
+
+                <div class="capability-card">
+
+                    <div class="capability-icon">
+                        🚨
+                    </div>
+
+                    <h3>
+                        Incident Guidance
+                    </h3>
+
+                    <p>
+                        Get step-by-step defensive guidance
+                        if you clicked a suspicious link or
+                        submitted sensitive information.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     CAPABILITY 4
+                     ========================================= -->
+
+                <div class="capability-card">
+
+                    <div class="capability-icon">
+                        🛡️
+                    </div>
+
+                    <h3>
+                        Prevention Advice
+                    </h3>
+
+                    <p>
+                        Learn practical methods to protect
+                        accounts, credentials and personal
+                        information.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     CAPABILITY 5
+                     ========================================= -->
+
+                <div class="capability-card">
+
+                    <div class="capability-icon">
+                        🌐
+                    </div>
+
+                    <h3>
+                        Safe Browsing
+                    </h3>
+
+                    <p>
+                        Learn how to inspect domains, links,
+                        login pages and suspicious online
+                        requests.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     CAPABILITY 6
+                     ========================================= -->
+
+                <div class="capability-card">
+
+                    <div class="capability-icon">
+                        🎓
+                    </div>
+
+                    <h3>
+                        Cybersecurity Education
+                    </h3>
+
+                    <p>
+                        Ask cybersecurity questions and
+                        receive easy-to-understand explanations
+                        for learning and awareness.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SECURITY NOTICE
+             ================================================= -->
+
+        <section class="security-notice">
+
+            <div class="notice-icon">
+                ⚠️
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Security Notice
+                </h3>
+
+                <p>
+                    CyberSentinel AI provides cybersecurity
+                    information and defensive guidance.
+                    Always independently verify critical
+                    security decisions and use official
+                    channels when responding to account,
+                    banking, or security-related requests.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="footer">
+
+        <div>
+
+            <strong>
+                🛡️ CyberSentinel
+            </strong>
+
+            <span>
+                AI-Powered Cyber Threat Detection Platform
+            </span>
+
+        </div>
+
+
+        <div>
+
+            © 2026 CyberSentinel
+
+        </div>
+
+    </footer>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script
+    src="page3.js"
+></script>
+
+
+</body>
+
+</html>

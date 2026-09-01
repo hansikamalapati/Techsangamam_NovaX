@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        CyberSentinel - Scanner
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="page2.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVIGATION
+     ========================================================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <span class="logo-icon">
+            🛡️
+        </span>
+
+        <span>
+            CyberSentinel
+        </span>
+
+    </div>
+
+
+    <nav>
+
+        <a href="../page1/page1.html">
+            Home
+        </a>
+
+        <a
+            href="page2.html"
+            class="active"
+        >
+            Scanner
+        </a>
+
+        <!-- AI CHATBOT -->
+        <a
+            href="../page3/page3.html"
+            class="ai-nav-btn"
+        >
+            🤖 AI Assistant
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN
+     ========================================================= -->
+
+<main class="main-container">
+
+
+<!-- =========================================================
+     SCANNER
+     ========================================================= -->
+
+<section
+    class="scanner-card"
+    id="scannerSection"
+>
+
+    <h1>
+        Select Scan Type
+    </h1>
+
+
+    <p class="scanner-subtitle">
+
+        Analyze URLs, emails, messages,
+        screenshots and web applications
+        for phishing and security threats.
+
+    </p>
+
+
+    <!-- =====================================================
+         SCAN TYPE CARDS
+         ===================================================== -->
+
+    <div class="scan-types">
+
+
+        <!-- URL -->
+
+        <div
+            class="scan-type active"
+            id="urlScanCard"
+            data-type="url"
+        >
+
+            <div class="scan-icon">
+                🔗
+            </div>
+
+            <h2>
+                URL Scan
+            </h2>
+
+            <p>
+                Detect phishing and malicious websites
+            </p>
+
+        </div>
+
+
+
+        <!-- EMAIL -->
+
+        <div
+            class="scan-type"
+            id="emailScanCard"
+            data-type="email"
+        >
+
+            <div class="scan-icon">
+                📧
+            </div>
+
+            <h2>
+                Email Scan
+            </h2>
+
+            <p>
+                Detect phishing emails
+            </p>
+
+        </div>
+
+
+
+        <!-- MESSAGE -->
+
+        <div
+            class="scan-type"
+            id="messageScanCard"
+            data-type="message"
+        >
+
+            <div class="scan-icon">
+                💬
+            </div>
+
+            <h2>
+                Message Scan
+            </h2>
+
+            <p>
+                Detect malicious messages
+            </p>
+
+        </div>
+
+
+
+        <!-- IMAGE -->
+
+        <div
+            class="scan-type"
+            id="imageScanCard"
+            data-type="image"
+        >
+
+            <div class="scan-icon">
+                🖼️
+            </div>
+
+            <h2>
+                Image Scan
+            </h2>
+
+            <p>
+                Analyze screenshots using OCR
+            </p>
+
+        </div>
+
+
+
+        <!-- WEB APPLICATION -->
+
+        <div
+            class="scan-type"
+            id="webAppScanCard"
+            data-type="webapp"
+        >
+
+            <div class="scan-icon">
+                🛡️
+            </div>
+
+            <h2>
+                Web App Scan
+            </h2>
+
+            <p>
+                Assess web application security
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         URL INPUT
+         ===================================================== -->
+
+    <div
+        class="input-section"
+        id="urlInputSection"
+    >
+
+        <label for="urlInput">
+            Enter URL
+        </label>
+
+
+        <input
+            type="url"
+            id="urlInput"
+            placeholder="https://example.com"
+            autocomplete="off"
+        >
+
+
+        <p class="input-help">
+
+            Enter the website URL you want
+            CyberSentinel to analyze.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         EMAIL INPUT
+         ===================================================== -->
+
+    <div
+        class="input-section hidden"
+        id="emailInputSection"
+    >
+
+        <label for="emailSender">
+            Sender Email
+        </label>
+
+
+        <input
+            type="email"
+            id="emailSender"
+            placeholder="sender@example.com"
+        >
+
+
+        <label for="emailSubject">
+            Email Subject
+        </label>
+
+
+        <input
+            type="text"
+            id="emailSubject"
+            placeholder="Enter email subject"
+        >
+
+
+        <label for="emailBody">
+            Email Body
+        </label>
+
+
+        <textarea
+            id="emailBody"
+            rows="8"
+            placeholder="Paste the email content here..."
+        ></textarea>
+
+
+        <p class="input-help">
+
+            Analyze the sender, subject,
+            email content and embedded links
+            for phishing indicators.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MESSAGE INPUT
+         ===================================================== -->
+
+    <div
+        class="input-section hidden"
+        id="messageInputSection"
+    >
+
+        <label for="messageInput">
+            Enter Message
+        </label>
+
+
+        <textarea
+            id="messageInput"
+            rows="8"
+            placeholder="Paste the suspicious message here..."
+        ></textarea>
+
+
+        <p class="input-help">
+
+            Analyze suspicious messages,
+            social engineering and phishing content.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         IMAGE INPUT
+         ===================================================== -->
+
+    <div
+        class="input-section hidden"
+        id="imageInputSection"
+    >
+
+        <label for="imageInput">
+            Upload Screenshot
+        </label>
+
+
+        <input
+            type="file"
+            id="imageInput"
+            accept="image/png,image/jpeg,image/jpg,image/webp"
+        >
+
+
+        <p class="input-help">
+
+            Upload a screenshot of a suspicious
+            email, message or website.
+
+        </p>
+
+
+        <div
+            id="imagePreview"
+            class="image-preview hidden"
+        ></div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         WEB APPLICATION INPUT
+         ===================================================== -->
+
+    <div
+        class="input-section hidden"
+        id="webAppInputSection"
+    >
+
+        <label for="webAppUrl">
+            Web Application URL
+        </label>
+
+
+        <input
+            type="url"
+            id="webAppUrl"
+            placeholder="https://example.com"
+            autocomplete="off"
+        >
+
+
+        <p class="input-help">
+
+            Performs a passive security assessment
+            of HTTPS, headers, cookies, CORS,
+            redirects and related configuration.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         ANALYZE BUTTON
+         ===================================================== -->
+
+    <button
+        id="analyzeBtn"
+        class="analyze-btn"
+        type="button"
+    >
+
+        🔍
+        Analyze Threat
+
+    </button>
+
+
+
+    <!-- =====================================================
+         AI CHATBOT BUTTON
+         ===================================================== -->
+
+    <div class="ai-assistant-link">
+
+        <button
+            type="button"
+            id="aiChatbotBtn"
+            class="ai-chatbot-btn"
+            onclick="window.location.href='../page3/page3.html';"
+        >
+            🤖 Open AI Cyber Assistant
+        </button>
+
+        <p>
+            Ask CyberSentinel AI about phishing,
+            threats, and your scan results.
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LOADING
+         ===================================================== -->
+
+    <div
+        id="loading"
+        class="loading hidden"
+    >
+
+        <div class="spinner"></div>
+
+        <p class="loading-text">
+            Analyzing...
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         ERROR
+         ===================================================== -->
+
+    <div
+        id="scannerError"
+        class="scanner-error hidden"
+    ></div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     RESULTS
+     ========================================================= -->
+
+<div
+    class="results-container"
+    id="results"
+>
+
+
+<!-- =========================================================
+     FINAL VERDICT
+     ========================================================= -->
+
+<section class="verdict-card">
+
+    <p class="section-label">
+        FINAL VERDICT
+    </p>
+
+
+    <h1 id="verdict">
+        UNKNOWN
+    </h1>
+
+
+    <div class="risk-score">
+
+        <span>
+            Risk Score
+        </span>
+
+        <strong id="riskScore">
+            -
+        </strong>
+
+        <span>
+            / 100
+        </span>
+
+    </div>
+
+
+    <div
+        class="risk-progress-container"
+    >
+
+        <div
+            id="riskProgress"
+            class="risk-progress"
+        ></div>
+
+    </div>
+
+
+    <p class="risk-level">
+
+        Risk Level:
+
+        <strong id="riskLevel">
+            -
+        </strong>
+
+    </p>
+
+</section>
+
+
+
+<!-- =========================================================
+     SUMMARY
+     ========================================================= -->
+
+<section class="summary-grid">
+
+
+    <div class="summary-card">
+
+        <span class="summary-label">
+            THREAT TYPE
+        </span>
+
+        <strong id="threatType">
+            -
+        </strong>
+
+    </div>
+
+
+
+    <div class="summary-card">
+
+        <span class="summary-label">
+            ATTACK CATEGORY
+        </span>
+
+        <strong id="attackCategory">
+            -
+        </strong>
+
+    </div>
+
+
+
+    <div class="summary-card">
+
+        <span class="summary-label">
+            AI PREDICTION
+        </span>
+
+        <strong id="aiPrediction">
+            -
+        </strong>
+
+    </div>
+
+
+
+    <div class="summary-card">
+
+        <span class="summary-label">
+            PHISHING PROBABILITY
+        </span>
+
+        <strong id="phishingProbability">
+            -
+        </strong>
+
+    </div>
+
+
+
+    <div class="summary-card">
+
+        <span class="summary-label">
+            LEGITIMATE PROBABILITY
+        </span>
+
+        <strong id="legitimateProbability">
+            -
+        </strong>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     AI ANALYSIS
+     ========================================================= -->
+
+<section class="result-section">
+
+    <h2>
+        🤖 AI Analysis
+    </h2>
+
+
+    <div class="result-row">
+
+        <span>
+            Model
+        </span>
+
+        <strong id="model">
+            -
+        </strong>
+
+    </div>
+
+
+    <div class="result-row">
+
+        <span>
+            Architecture
+        </span>
+
+        <strong id="architecture">
+            -
+        </strong>
+
+    </div>
+
+
+    <div class="result-row">
+
+        <span>
+            Features Used
+        </span>
+
+        <strong id="featuresUsed">
+            -
+        </strong>
+
+    </div>
+
+
+    <div class="probability-container">
+
+        <div class="probability-box">
+
+            <span>
+                Phishing
+            </span>
+
+            <strong id="aiPhishingProbability">
+                -
+            </strong>
+
+        </div>
+
+
+        <div class="probability-box">
+
+            <span>
+                Legitimate
+            </span>
+
+            <strong id="aiLegitimateProbability">
+                -
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="analysis-text">
+
+        <h3>
+            AI Explanation
+        </h3>
+
+        <p id="aiExplanation">
+            No AI explanation available.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     THREAT SUMMARY
+     ========================================================= -->
+
+<section class="result-section">
+
+    <h2>
+        🔎 Threat Analysis
+    </h2>
+
+
+    <div class="analysis-block">
+
+        <h3>
+            What is the Threat?
+        </h3>
+
+        <p id="whatIsTheThreat">
+            No threat description available.
+        </p>
+
+    </div>
+
+
+    <div class="analysis-block">
+
+        <h3>
+            Attack Objective
+        </h3>
+
+        <p id="attackObjective">
+            -
+        </p>
+
+    </div>
+
+
+    <div class="analysis-block">
+
+        <h3>
+            How the Attack Works
+        </h3>
+
+        <p id="howAttackWorks">
+            No attack explanation available.
+        </p>
+
+    </div>
+
+
+    <div class="analysis-block">
+
+        <h3>
+            Risk Analysis
+        </h3>
+
+        <p id="riskAnalysis">
+            No risk analysis available.
+        </p>
+
+    </div>
+
+
+    <div class="analysis-block">
+
+        <h3>
+            Analyst Conclusion
+        </h3>
+
+        <p id="analystConclusion">
+            No conclusion available.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ATTACK SCENARIO
+     ========================================================= -->
+
+<section class="result-section">
+
+    <h2>
+        🎯 Attack Scenario
+    </h2>
+
+
+    <div
+        id="attackScenario"
+        class="analysis-list"
+    >
+
+        <p>
+            No attack scenario available.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     POTENTIAL IMPACT
+     ========================================================= -->
+
+<section class="result-section">
+
+    <h2>
+        💥 Potential Impact
+    </h2>
+
+
+    <div
+        id="potentialImpact"
+        class="analysis-list"
+    >
+
+        <p>
+            No impact information available.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     REASONS
+     ========================================================= -->
+
+<section class="result-section">
+
+    <h2>
+        🧩 Detection Reasons
+    </h2>
+
+
+    <div
+        id="reasons"
+        class="analysis-list"
+    >
+
+        <p>
+            No detection reasons available.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SECURITY ANALYSIS
+     ========================================================= -->
+
+<section class="result-section">
+
+    <h2>
+        🔐 Security Analysis
+    </h2>
+
+
+    <div class="result-row">
+
+        <span>
+            Rule Score
+        </span>
+
+        <strong id="ruleScore">
+            -
+        </strong>
+
+    </div>
+
+
+    <h3 class="subheading">
+        Security Indicators
+    </h3>
+
+
+    <div
+        id="indicators"
+        class="indicators-container"
+    >
+
+        <div class="indicator safe">
+
+            ✓ No significant indicators detected.
+
+        </div>
+
+    </div>
+
+
+    <div class="analysis-block">
+
+        <h3>
+            Security Rule Explanation
+        </h3>
+
+        <p id="securityRuleExplanation">
+            No security rule explanation available.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     EVIDENCE
+     ========================================================= -->
+
+<section class="result-section">
+
+    <h2>
+        🔬 Evidence
+    </h2>
+
+
+    <div
+        id="evidence"
+        class="analysis-list"
+    >
+
+        <p>
+            No evidence available.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     DOMAIN ANALYSIS
+     ========================================================= -->
+
+<section class="result-section">
+
+    <h2>
+        🌐 Domain Analysis
+    </h2>
+
+
+    <div
+        id="domainAnalysis"
+        class="key-value-container"
+    >
+
+        <p>
+            No domain analysis available.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     TYPOSQUATTING
+     ========================================================= -->
+
+<section class="result-section">
+
+    <h2>
+        🎭 Typosquatting Analysis
+    </h2>
+
+
+    <div
+        id="typosquatting"
+        class="typosquatting-container"
+    >
+
+        <p>
+            No typosquatting information available.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     URL ANALYSIS
+     ========================================================= -->
+
+<section class="result-section">
+
+    <h2>
+        🔗 URL Analysis
+    </h2>
+
+
+    <div
+        id="urlAnalysis"
+        class="url-analysis"
+    >
+
+        <p>
+            No URLs were extracted or analyzed.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     URL FEATURES
+     ========================================================= -->
+
+<section class="result-section">
+
+    <h2>
+        📊 URL Security Features
+    </h2>
+
+
+    <div
+        id="featureList"
+        class="feature-list"
+    >
+
+        <p>
+            No feature information available.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     THREAT INTELLIGENCE
+     ========================================================= -->
+
+<section class="result-section">
+
+    <h2>
+        🧠 Threat Intelligence
+    </h2>
+
+
+    <div
+        id="threatIntelligence"
+        class="threat-intelligence"
+    >
+
+        No threat intelligence information available.
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     OCR
+     ========================================================= -->
+
+<section
+    id="ocrSection"
+    class="result-section hidden"
+>
+
+    <h2>
+        🖼️ OCR Analysis
+    </h2>
+
+
+    <p class="ocr-description">
+
+        Text extracted from the uploaded screenshot:
+
+    </p>
+
+
+    <div
+        id="ocrText"
+        class="ocr-text"
+    ></div>
+
+</section>
+
+
+
+<!-- =========================================================
+     WEB APPLICATION SECURITY
+     ========================================================= -->
+
+<section
+    id="webAppResultsSection"
+    class="result-section hidden"
+>
+
+    <h2>
+        🛡️ Web Application Security
+    </h2>
+
+
+    <div class="result-row">
+
+        <span>
+            Target URL
+        </span>
+
+        <strong id="webAppTarget">
+            -
+        </strong>
+
+    </div>
+
+
+    <div class="result-row">
+
+        <span>
+            HTTP Status
+        </span>
+
+        <strong id="webHttpStatus">
+            -
+        </strong>
+
+    </div>
+
+
+    <div class="result-row">
+
+        <span>
+            Final URL
+        </span>
+
+        <strong id="webFinalUrl">
+            -
+        </strong>
+
+    </div>
+
+
+    <div class="result-row">
+
+        <span>
+            DNS Status
+        </span>
+
+        <strong id="webDnsStatus">
+            -
+        </strong>
+
+    </div>
+
+
+    <div class="result-row">
+
+        <span>
+            HTTPS
+        </span>
+
+        <strong id="webHttpsStatus">
+            -
+        </strong>
+
+    </div>
+
+
+    <div class="result-row">
+
+        <span>
+            Server
+        </span>
+
+        <strong id="webServer">
+            -
+        </strong>
+
+    </div>
+
+
+    <div class="result-row">
+
+        <span>
+            Content Type
+        </span>
+
+        <strong id="webContentType">
+            -
+        </strong>
+
+    </div>
+
+
+    <h3 class="subheading">
+        Security Findings
+    </h3>
+
+
+    <div
+        id="webSecurityFindings"
+        class="indicators-container"
+    >
+
+        <div class="indicator safe">
+
+            No findings available.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PREVENTION
+     ========================================================= -->
+
+<section class="result-section">
+
+    <h2>
+        🛡️ Prevention
+    </h2>
+
+
+    <div
+        id="preventionSolution"
+        class="analysis-list"
+    >
+
+        <p>
+            No prevention information available.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SECURITY RECOMMENDATION
+     ========================================================= -->
+
+<section class="recommendation-card">
+
+    <h2>
+        ⚠️ Security Recommendation
+    </h2>
+
+
+    <div
+        id="recommendation"
+    >
+
+        No recommendation available.
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     REPORT ACTIONS
+     ========================================================= -->
+
+<section class="report-actions">
+
+    <button
+        id="downloadReportBtn"
+        class="report-btn"
+        type="button"
+    >
+
+        📄
+        Download Security Report
+
+    </button>
+
+
+    <button
+        id="scanAgainBtn"
+        class="scan-again-btn"
+        type="button"
+    >
+
+        🔄
+        Scan Another
+
+    </button>
+
+</section>
+
+
+</div>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer class="footer">
+
+    © 2026 CyberSentinel |
+    AI-Powered Cyber Threat Detection
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script src="page2.js"></script>
+
+
+</body>
+
+</html>
